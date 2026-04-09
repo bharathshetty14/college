@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BB Hegde First Grade College</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .page {
+            display: none;
+            padding-top: 100px;
+            animation: fadeSlide 0.8s ease;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Animation */
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 3D Title */
+        .title {
+            font-size: 55px;
+            font-weight: bold;
+            text-shadow: 
+                2px 2px 0 #999,
+                4px 4px 0 #777,
+                6px 6px 0 #555,
+                8px 8px 10px rgba(0,0,0,0.5);
+            animation: pop 1s ease;
+        }
+
+        @keyframes pop {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 8px;
+            background: #ff9800;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #e68900;
+            transform: scale(1.05);
+        }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            margin: 20px auto;
+            padding: 20px;
+            width: 60%;
+            border-radius: 10px;
+            animation: fadeSlide 1s ease;
+        }
+
+        img {
+            width: 60%;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page active">
+    <div class="title">
+        BB HEGDE FIRST GRADE COLLEGE<br>KUNDAPURA
+    </div>
+
+    <!-- College Image -->
+    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914" alt="College Image">
+
+    <button onclick="showPage(2)">Enter</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+    <h1>Available Courses</h1>
+
+    <div class="card">B.Com</div>
+    <div class="card">BBA</div>
+    <div class="card">BCA</div>
+
+    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="Students">
+
+    <button onclick="showPage(3)">Next</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+    <h1>College Information</h1>
+
+    <div class="card">
+        <h2>Total Students</h2>
+        <p>2000 Students</p>
+    </div>
+
+    <div class="card">
+        <h2>Boys</h2>
+        <p>800</p>
+    </div>
+
+    <div class="card">
+        <h2>Girls</h2>
+        <p>1200</p>
+    </div>
+
+    <div class="card">
+        <h2>Faculty</h2>
+        <p>100 Members</p>
+    </div>
+
+    <div class="card">
+        <h2>Activities Available</h2>
+        <p>NSS, NCC, YRC, etc.</p>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1562774053-701939374585" alt="Campus">
+
+</div>
+
+<script>
+function showPage(pageNumber) {
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    document.getElementById('page' + pageNumber).classList.add('active');
+}
+</script>
+
+</body>
+</html>
